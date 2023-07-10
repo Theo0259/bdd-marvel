@@ -51,6 +51,13 @@ VALUES ('Captain America: The First Avenger', '02:04:00', '2011-07-22');
 ```
 - ajouter une actrice ou un acteur
 - modifier un film
+
+```sql
+UPDATE Films
+SET Titre_Films = 'Iron Man', Durée_Films = '02:06:10', Date_de_Sortie_Films = '2008-05-02'
+WHERE ID_Films_Films = 1;
+```
+
 - supprimer une actrice ou un acteur
 - afficher les 3 derniers acteurs/actrices ajouté(e)s
 ​
