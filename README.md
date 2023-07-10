@@ -49,7 +49,16 @@ WHERE TIMESTAMPDIFF(YEAR, Date_de_naissance_Acteurs, CURDATE()) > 30
 ORDER BY Nom_Acteurs, Prénom_Acteurs ASC;
 ```
 
-- la liste des actrices ou acteurs principaux pour un film donné
+- la liste des actrices ou acteurs principaux pour un film donné : 
+
+```sql
+SELECT Acteurs.Prénom_Acteurs, Acteurs.Nom_Acteurs
+FROM Acteurs
+JOIN A_joué_dans ON Acteurs.ID_Acteurs_Acteurs = A_joué_dans.ID_Acteurs_Acteurs
+JOIN Films ON Films.ID_Films_Films = A_joué_dans.ID_Films_Films
+WHERE Films.Titre_Films = 'Iron Man'
+```
+
 - la liste des films pour une actrice ou un acteur donné
 - ajouter un film :
 
