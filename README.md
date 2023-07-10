@@ -43,7 +43,12 @@ ORDER BY Date_de_Sortie_Films ASC;
 - les noms, prénoms et âges des acteurs ou actrices de plus de 30 ans dans l'ordre alphabétique
 - la liste des actrices ou acteurs principaux pour un film donné
 - la liste des films pour une actrice ou un acteur donné
-- ajouter un film
+- ajouter un film :
+
+```sql
+INSERT INTO Films (Titre_Films, Durée_Films, Date_de_Sortie_Films)
+VALUES ('Captain America: The First Avenger', '02:04:00', '2011-07-22');
+```
 - ajouter une actrice ou un acteur
 - modifier un film
 - supprimer une actrice ou un acteur
