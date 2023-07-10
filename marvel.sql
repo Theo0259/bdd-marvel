@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : ven. 07 juil. 2023 à 12:52
+-- Généré le : lun. 10 juil. 2023 à 13:04
 -- Version du serveur : 8.0.29
 -- Version de PHP : 8.0.27
 
@@ -61,11 +61,11 @@ CREATE TABLE `A_joué_dans` (
 --
 
 INSERT INTO `A_joué_dans` (`ID_Acteurs_Acteurs`, `ID_Films_Films`, `Role_Acteur_A_joué_dans`) VALUES
-(1, 1, NULL),
-(1, 5, NULL),
-(2, 2, NULL),
-(3, 3, NULL),
-(4, 4, NULL);
+(1, 1, 'Tony Stark'),
+(1, 5, 'Tony Stark'),
+(2, 2, 'Thor'),
+(3, 3, 'Peter Parker'),
+(4, 4, 'Peter Quill');
 
 -- --------------------------------------------------------
 

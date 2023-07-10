@@ -17,30 +17,31 @@ Avant celà, j'ai besoin d'une base de données afin de stocker des données app
 
 ### Structure de la base de donnée relationnelle
 
-*Les films*  
+_Les films_  
 Un film comporte un titre, un ou plusieurs acteurs, un réalisateur, une durée et l'année de sa sortie.
 
-*Les acteurs, actrices*  
+_Les acteurs, actrices_  
 Nom, prénom, rôle et date de naissance.
 
-*Les réalisateurs*  
+_Les réalisateurs_  
 Nom et prénom.
 
-*Les utilisateurs*  
+_Les utilisateurs_  
 Nom, prénom, email, mot de passe, rôle et liste des films préférés.
 
 ### Les requêtes
 
 Merci de me fournir ce jeu de requêtes pour tester la bdd :
+
 - les titres et dates de sortie des films du plus récent au plus ancien :
- 
+
 ```sql
  SELECT Titre_Films, Date_de_Sortie_Films
 FROM Films
-ORDER BY Date_de_Sortie_Films ASC; 
+ORDER BY Date_de_Sortie_Films ASC;
 ```
 
-- les noms, prénoms et âges des acteurs ou actrices de plus de 30 ans dans l'ordre alphabétique : 
+- les noms, prénoms et âges des acteurs ou actrices de plus de 30 ans dans l'ordre alphabétique :
 
 ```sql
 SELECT Prénom_Acteurs, Nom_Acteurs, TIMESTAMPDIFF(YEAR, Date_de_naissance_Acteurs, CURDATE()) AS Age
@@ -49,7 +50,7 @@ WHERE TIMESTAMPDIFF(YEAR, Date_de_naissance_Acteurs, CURDATE()) > 30
 ORDER BY Nom_Acteurs, Prénom_Acteurs ASC;
 ```
 
-- la liste des actrices ou acteurs principaux pour un film donné : 
+- la liste des actrices ou acteurs principaux pour un film donné :
 
 ```sql
 SELECT Acteurs.Prénom_Acteurs, Acteurs.Nom_Acteurs
@@ -59,14 +60,24 @@ JOIN Films ON Films.ID_Films_Films = A_joué_dans.ID_Films_Films
 WHERE Films.Titre_Films = 'Iron Man'
 ```
 
-- la liste des films pour une actrice ou un acteur donné
+- la liste des films pour une actrice ou un acteur donné :
+
+```sql
+SELECT Films.Titre_Films, Acteurs.*
+FROM Acteurs
+JOIN A_joué_dans ON Acteurs.ID_Acteurs_Acteurs = A_joué_dans.ID_Acteurs_Acteurs
+JOIN Films ON Films.ID_Films_Films = A_joué_dans.ID_Films_Films
+WHERE Acteurs.Nom_Acteurs = 'Downey Jr.';
+```
+
 - ajouter un film :
 
 ```sql
 INSERT INTO Films (Titre_Films, Durée_Films, Date_de_Sortie_Films)
 VALUES ('Captain America: The First Avenger', '02:04:00', '2011-07-22');
 ```
-- ajouter une actrice ou un acteur : 
+
+- ajouter une actrice ou un acteur :
 
 ```sql
 INSERT INTO Acteurs (Prénom_Acteurs, Nom_Acteurs, Date_de_naissance_Acteurs)
@@ -81,7 +92,7 @@ SET Titre_Films = 'Iron Man', Durée_Films = '02:06:10', Date_de_Sortie_Films = 
 WHERE ID_Films_Films = 1;
 ```
 
-- supprimer une actrice ou un acteur : 
+- supprimer une actrice ou un acteur :
 
 ```sql
 DELETE FROM Acteurs
@@ -96,7 +107,9 @@ FROM Acteurs
 ORDER BY ID_Acteurs DESC
 LIMIT 3;
 ```
+
 ​
+
 ### Contraintes
 
 - utiliser AnalyseSi
@@ -109,13 +122,14 @@ Vos requêtes seront executées après avoir importé la bdd dans votre image do
 ## Livrables
 
 Un dépôt GitHub contenant dans l'ordre :
+
 - l'environnement docker
 - le dictionnaire de données
 - MCD
 - MPD
 - MLD
-- un fichier au format *sql* (incluant quelques données)
-- le jeu de requêtes dans le *README.md*
+- un fichier au format _sql_ (incluant quelques données)
+- le jeu de requêtes dans le _README.md_
 
 ## Deadline
 
@@ -129,4 +143,4 @@ Un dépôt GitHub contenant dans l'ordre :
 
 ## Authors
 
-* [Nicolas Herbez](https://github.com/nicolas-herbez)
+- [Nicolas Herbez](https://github.com/nicolas-herbez)
