@@ -49,8 +49,14 @@ ORDER BY Date_de_Sortie_Films ASC;
 INSERT INTO Films (Titre_Films, Durée_Films, Date_de_Sortie_Films)
 VALUES ('Captain America: The First Avenger', '02:04:00', '2011-07-22');
 ```
-- ajouter une actrice ou un acteur
-- modifier un film
+- ajouter une actrice ou un acteur : 
+
+```sql
+INSERT INTO Acteurs (Prénom_Acteurs, Nom_Acteurs, Date_de_naissance_Acteurs)
+VALUES ('Chris', 'Evans', '1981-06-13');
+```
+
+- modifier un film :
 
 ```sql
 UPDATE Films
