@@ -32,7 +32,14 @@ Nom, prénom, email, mot de passe, rôle et liste des films préférés.
 ### Les requêtes
 
 Merci de me fournir ce jeu de requêtes pour tester la bdd :
-- les titres et dates de sortie des films du plus récent au plus ancien
+- les titres et dates de sortie des films du plus récent au plus ancien :
+ 
+```sql
+ SELECT Titre_Films, Date_de_Sortie_Films
+FROM Films
+ORDER BY Date_de_Sortie_Films ASC; 
+```
+
 - les noms, prénoms et âges des acteurs ou actrices de plus de 30 ans dans l'ordre alphabétique
 - la liste des actrices ou acteurs principaux pour un film donné
 - la liste des films pour une actrice ou un acteur donné
