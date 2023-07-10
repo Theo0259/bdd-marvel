@@ -40,7 +40,15 @@ FROM Films
 ORDER BY Date_de_Sortie_Films ASC; 
 ```
 
-- les noms, prénoms et âges des acteurs ou actrices de plus de 30 ans dans l'ordre alphabétique
+- les noms, prénoms et âges des acteurs ou actrices de plus de 30 ans dans l'ordre alphabétique : 
+
+```sql
+SELECT Prénom_Acteurs, Nom_Acteurs, TIMESTAMPDIFF(YEAR, Date_de_naissance_Acteurs, CURDATE()) AS Age
+FROM Acteurs
+WHERE TIMESTAMPDIFF(YEAR, Date_de_naissance_Acteurs, CURDATE()) > 30
+ORDER BY Nom_Acteurs, Prénom_Acteurs ASC;
+```
+
 - la liste des actrices ou acteurs principaux pour un film donné
 - la liste des films pour une actrice ou un acteur donné
 - ajouter un film :
