@@ -71,7 +71,14 @@ DELETE FROM Acteurs
 WHERE Prénom_Acteurs = 'Chris' AND Nom_Acteurs = 'Evans';
 ```
 
-- afficher les 3 derniers acteurs/actrices ajouté(e)s
+- afficher les 3 derniers acteurs/actrices ajouté(e)s :
+
+```sql
+SELECT Prénom_Acteurs, Nom_Acteurs, Date_de_naissance_Acteurs
+FROM Acteurs
+ORDER BY ID_Acteurs DESC
+LIMIT 3;
+```
 ​
 ### Contraintes
 
