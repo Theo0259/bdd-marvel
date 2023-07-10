@@ -64,7 +64,13 @@ SET Titre_Films = 'Iron Man', Durée_Films = '02:06:10', Date_de_Sortie_Films = 
 WHERE ID_Films_Films = 1;
 ```
 
-- supprimer une actrice ou un acteur
+- supprimer une actrice ou un acteur : 
+
+```sql
+DELETE FROM Acteurs
+WHERE Prénom_Acteurs = 'Chris' AND Nom_Acteurs = 'Evans';
+```
+
 - afficher les 3 derniers acteurs/actrices ajouté(e)s
 ​
 ### Contraintes
